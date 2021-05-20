@@ -1,0 +1,21 @@
+{
+  "navigationFallback": {
+    "rewrite": "index.html",
+    "exclude": ["/_framework/*", "/css/*"]
+  },  
+  "routes": [
+
+      {
+        "route":"/login",
+        "redirect":"/.auth/login/aad"
+      },
+      {
+        "route":"/currentweather",
+        "allowedRoles":["authenticated"]
+      },
+      {
+        "route": "/.auth/login/twitter",
+        "statusCode": "404"
+      }
+    ]
+  }
