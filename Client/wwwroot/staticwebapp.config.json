@@ -21,6 +21,10 @@
       {
         "route": "/.auth/login/twitter",
         "statusCode": "404"
+      },
+      {
+      "route": "/api/*",
+      "allowedRoles": ["authenticated"]
       }
     ],
    "responseOverrides": {
