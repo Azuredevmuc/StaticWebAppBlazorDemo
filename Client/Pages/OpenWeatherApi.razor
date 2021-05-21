@@ -1,8 +1,9 @@
 @page "/currentweather"
 
 @using BlazorApp.Shared 
+@using Microsoft.AspNetCore.Authorization
 @inject HttpClient Http
-
+@attribute [Authorize()]
 <h1>OpenWeatherMap API</h1>
 
 <p>Daten von OpenWeatherMap API</p>
