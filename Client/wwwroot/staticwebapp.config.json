@@ -1,7 +1,7 @@
 {
   "navigationFallback": {
     "rewrite": "index.html",
-    "exclude": ["/_framework/*", "/css/*", "/.auth/*"]
+    "exclude": ["/_framework/*", "/css/*", "/.auth/*", "/login"]
   },  
   "routes": [
 
@@ -22,5 +22,20 @@
         "route": "/.auth/login/twitter",
         "statusCode": "404"
       }
-    ]
+    ],
+   "responseOverrides": {
+    "400": {
+      "rewrite": "/invalid-invitation-error.html"
+    },
+    "401": {
+      "redirect": "/login",
+      "statusCode": 302
+    },
+    "403": {
+      "rewrite": "/custom-forbidden-page.html"
+    },
+    "404": {
+      "rewrite": "/404.html"
+    }
+  },
   }
